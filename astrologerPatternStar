@@ -1,0 +1,12 @@
+number=int(input("Enter The Number You Want Star"))
+way=bool(int(input("Enter the 1 for the raising tree and 0 for falling tree")))
+if way==True:
+    for i in range(number):
+        for j in range(i+1):
+            print("*",end="")
+        print()
+else:
+    for i in range(number,0,-1):
+        for j in range(i):
+            print("*",end="")
+        print()
