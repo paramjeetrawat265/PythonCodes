@@ -1,0 +1,38 @@
+import random
+print("Play Game Snake, Water and Gun")
+chances=0
+win=0
+lost=0
+tied=0
+while(chances<9):
+    choice = input("Choose 'S' for Snake 'w' for Water 'g' for Gun \n")
+    option=["snake","water","gun"]
+    opt=random.choice(option)
+    if(choice=='s' or choice=='S') and opt=='water':
+        print("You Win")
+        print(f"Your Choice is Snake and opponent choice is {opt.upper()}")
+        win+=1
+    elif(choice=='w' or choice=='W') and opt=='gun':
+        print("You Win")
+        print(f"Your Choice is Water and opponent choice is {opt.upper()}")
+        win+=1
+    elif(choice=='g' or choice=='G') and opt=='snake':
+        print("You Win")
+        print(f"Your Choice is Gun and opponent choice is {opt.upper()}")
+        win+=1
+    elif(((choice=='g' or choice=='G') and opt=="gun") or ((choice=='w' or choice=='W') and opt=="water") or ((choice=='s' or choice=='S') and opt=="snake") ):
+        print("Match Tied")
+        print(f"Your Choice is {choice} and opponent choice is {opt.upper()}")
+        tied+=1
+    else:
+        print("You Lost")
+        print(f"Your Choice is {choice} and opponent choice is {opt.upper()}")
+        lost+=1
+
+    chances+=1
+
+
+print("====Game Over====\n")
+print(f"you Lost {lost} Time")
+print(f"You Win {win} Time")
+print(f"Match Tied {tied} Time")
